@@ -1,0 +1,139 @@
+/* Fonte retrô do Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+/* Reset básico de margens e fonte padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Press Start 2P", sans-serif;
+    }
+
+/* Ajuste de fundo da página e segurança de overflow */
+body {
+    background-color: #121212;
+    overflow: hidden;
+    font-size: clamp(14px, 2vw, 18px); /* Tamanho de texto para se adaptar automaticamente */
+    color: white; /* Garantir texto legível */
+    line-height: 1.5;
+    height: 100vh; /* Impede que o conteúdo transborde */
+}
+
+/* Área de jogo (canvas) cobre toda a tela */
+canvas {
+    width: 100vw;
+    height: 100dvh;
+    display: block;
+    background-color: #121212;
+    box-sizing: border-box; /* Evita problemas com overflow */
+}
+
+/* Telas de início e game over */
+.screen {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100dvh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7); 
+    overflow: hidden; 
+}
+
+/* Títulos principais das telas */
+.screen h1 {
+    font-size: clamp(2rem, 6vw, 3rem); 
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px; 
+    overflow-wrap: break-word; 
+}
+
+/* Texto inferior pequeno */
+.screen span {
+    font-size: clamp(0.5rem, 1.2vw, 0.7rem);
+    color: #aaa;
+    margin-top: auto;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+/* Alinha botão e título no centro vertical */
+.start-screen > div {
+    margin-top: auto;
+}
+
+/* Botões responsivos */
+.button-play,
+.button-restart {
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    background-color: #ddd;
+    display: block;
+    margin: 20px auto 0;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    user-select: none; 
+    outline: none; 
+}
+
+.button-play:hover,
+.button-restart:hover {
+    background-color: #fff;
+}
+
+/* Tela de Game Over animada */
+.game-over {
+    transform: scale(0);
+    animation: zoom 2s ease-in-out forwards;
+    }
+
+/* Placar no topo */
+.score-ui {
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    font-size: clamp(0.6rem, 1vw, 1rem);
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    overflow: hidden;
+    }
+
+/* Layout interno do placar com flexbox responsivo */
+.score-ui > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Animação de zoom suave */
+@keyframes zoom {
+    from {
+    transform: scale(0);
+    }
+    to {
+    transform: scale(1);
+    }
+}
+
+/* Fallback de fontes (caso a fonte do Google não seja carregada) */
+body {
+    font-family: "Press Start 2P", sans-serif, Arial, Helvetica;
+}

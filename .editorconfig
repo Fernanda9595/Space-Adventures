@@ -1,0 +1,12 @@
+# Este é o arquivo de configuração principal do EditorConfig para todo o projeto
+root = true
+
+# Configurações padrão para todos os arquivos
+[*]
+indent_style = space           # Usa espaços em vez de tabulação
+indent_size = 4                # Define o tamanho da indentação como 4 espaços
+end_of_line = lf               # Usa a convenção de linha de finalização LF (line feed)
+charset = utf-8                # Usa a codificação de caracteres UTF-8
+trim_trailing_whitespace = true # Remove os espaços em branco no final das linhas
+insert_final_newline = true    # Garante que o arquivo termine com uma nova linha
+max_line_length = 85           # Define o comprimento máximo das linhas para 85 caracteres

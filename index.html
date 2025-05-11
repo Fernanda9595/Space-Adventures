@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Define a codificação de caracteres para suportar acentuação -->
+    <meta charset="UTF-8">
+
+    <!-- Define as configurações de responsividade para diferentes tamanhos de tela -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título da aba do navegador -->
+    <title>Space Adventures</title>
+
+    <!-- Importa o arquivo de estilos CSS -->
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+
+    <!-- HUD do jogo com pontuação, nível e recorde -->
+    <section class="score-ui">
+        <div>
+            <span class="score">score: <span>0</span></span>
+            <span class="level">level: <span>1</span></span>
+            <span class="high">high: <span>0</span></span>
+        </div>
+    </section>
+
+    <!-- Tela inicial do jogo com botão "Play" -->
+    <section class="start-screen screen">
+        <div>
+            <h1>Space Adventures</h1>
+            <button class="button-play">Play</button>
+        </div>
+        <span>Nabihh version</span>
+    </section>
+
+    <!-- Tela de "Game Over" exibida após o fim do jogo -->
+    <section class="game-over screen">
+        <div>
+            <h1>Game Over</h1>
+            <button class="button-restart">Restart</button>
+        </div>
+    </section>
+
+    <!-- Canvas onde o jogo é renderizado -->
+    <canvas></canvas>
+
+    <!-- Importa o script principal usando ES Modules -->
+    <script type="module" src="src/index.js"></script>
+
+</body>
+</html>
